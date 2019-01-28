@@ -16,7 +16,11 @@ class App extends React.Component {
     this.setState({ shareholders: newShareholder });
   }
 
-
+  issueNewShares = issue => {
+    const newShares = {...this.state.sharesIssues};
+    newShares[`issue${Date.now()}`] = issue;
+    this.setState({ sharesIssues: newShares });
+  }
 
   render() {
     return (
@@ -26,11 +30,11 @@ class App extends React.Component {
         </span>
         <span>
           {Object.keys(this.state.shareholders).map(shareholder => {
-            return <Shareholder key={shareholder} details={this.state.shareholders[shareholder]} /> }
+            return <Shareholder key={shareholder} details={this.state.shareholders[shareholder]} sharesIssues={this.state.sharesIssues} /> }
           )}
         </span>
         <span>
-          <IssueNewSharesForm details={this.state.shareholders} />
+          <IssueNewSharesForm issueNewShares={this.issueNewShares} details={this.state.shareholders} />
         </span>
       </div>
     );

@@ -12,7 +12,7 @@ class Shareholder extends React.Component {
         <h4>{email}</h4>
         <p>{`${address.line1}, ${address.postcode} ${address.city} (${address.country})`}</p>
         <br/>
-        <SharesIssue />
+        <SharesIssue sharesIssues={this.props.sharesIssues}/>
       </div>
     )
   }
