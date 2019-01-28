@@ -9,7 +9,9 @@ body {
 }
 
 .add-shareholders-form {
-  
+  display: flex;
+  flex-direction: column;
+  width: 300px;
 }
 
 
