@@ -10,19 +10,30 @@ class App extends React.Component {
     shareholders: {},
     sharesIssues: {},
     capTable: {}
-  }
+  };
+
+  componentDidMount() {
+    const localStorageRef = localStorage.getItem('shareholders');
+    if (localStorageRef) {
+      this.setState( {shareholders: JSON.parse(localStorageRef)} )
+    }
+  };
+
+  componentDidUpdate(){
+    localStorage.setItem('shareholders', JSON.stringify(this.state.shareholders));
+  };
 
   addShareholder = shareholder => {
     const newShareholder = {...this.state.shareholders};
     newShareholder[`shareholder${Date.now()}`] = shareholder;
     this.setState({ shareholders: newShareholder });
-  }
+  };
 
   issueNewShares = issue => {
     const newShares = {...this.state.sharesIssues};
     newShares[`issue${Date.now()}`] = issue;
     this.setState({ sharesIssues: newShares });
-  }
+  };
 
   render() {
     return (
@@ -46,6 +57,6 @@ class App extends React.Component {
       </div>
     );
   }
-}
+};
 
 export default App;
