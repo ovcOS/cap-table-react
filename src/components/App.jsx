@@ -1,7 +1,7 @@
 import React from 'react';
 import Shareholder from './Shareholder';
 import AddShareholdersForm from './AddShareholdersForm'
-import SharesIssue from './SharesIssue';
+import IssueNewSharesForm from './IssueNewSharesForm';
 
 class App extends React.Component {
   state = {
@@ -16,16 +16,22 @@ class App extends React.Component {
     this.setState({ shareholders: newShareholder });
   }
 
+
+
   render() {
     return (
-      <div>
-        <AddShareholdersForm addShareholder={this.addShareholder}/>
-        <br/>
-        {Object.keys(this.state.shareholders).map(shareholder => {
-          return <Shareholder key={shareholder} details={this.state.shareholders[shareholder]} /> }
-        )}
-        <br/>
-        <SharesIssue />
+      <div className="menu">
+        <span>
+          <AddShareholdersForm addShareholder={this.addShareholder}/>
+        </span>
+        <span>
+          {Object.keys(this.state.shareholders).map(shareholder => {
+            return <Shareholder key={shareholder} details={this.state.shareholders[shareholder]} /> }
+          )}
+        </span>
+        <span>
+          <IssueNewSharesForm details={this.state.shareholders} />
+        </span>
       </div>
     );
   }

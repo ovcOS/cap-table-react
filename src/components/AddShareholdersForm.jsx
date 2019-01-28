@@ -24,7 +24,6 @@ class AddShareholdersForm extends React.Component {
         country: this.countryRef.current.value,
       }
     };
-    console.log(shareholder);
     this.props.addShareholder(shareholder);
     event.currentTarget.reset()
   }

@@ -8,6 +8,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.menu {
+  display: flex;
+}
+
+.menu > * {
+  flex: 1;
+}
+
 .add-shareholders-form {
   display: flex;
   flex-direction: column;
