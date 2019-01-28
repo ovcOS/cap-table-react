@@ -14,7 +14,6 @@ class IssueNewShares extends React.Component {
       amount: parseInt(this.amountRef.current.value),
       pricePerShare: parseInt(this.pricePerShareRef.current.value), 
     };
-    console.log(sharesIssue);
     this.props.issueNewShares(sharesIssue);
   };
 

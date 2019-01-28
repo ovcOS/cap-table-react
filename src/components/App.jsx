@@ -2,6 +2,8 @@ import React from 'react';
 import Shareholder from './Shareholder';
 import AddShareholdersForm from './AddShareholdersForm'
 import IssueNewSharesForm from './IssueNewSharesForm';
+import SharesIssue from './SharesIssue';
+
 
 class App extends React.Component {
   state = {
@@ -30,11 +32,16 @@ class App extends React.Component {
         </span>
         <span>
           {Object.keys(this.state.shareholders).map(shareholder => {
-            return <Shareholder key={shareholder} details={this.state.shareholders[shareholder]} sharesIssues={this.state.sharesIssues} /> }
+            return <Shareholder key={shareholder} details={this.state.shareholders[shareholder]} /> }
           )}
         </span>
         <span>
           <IssueNewSharesForm issueNewShares={this.issueNewShares} details={this.state.shareholders} />
+        </span>
+        <span>
+          {Object.keys(this.state.sharesIssues).map(issue => {
+            return <SharesIssue key={issue} details={this.state.sharesIssues[issue]} /> }
+          )}
         </span>
       </div>
     );

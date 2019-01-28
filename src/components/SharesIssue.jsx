@@ -1,16 +1,15 @@
 import React from 'react';
 
 class SharesIssue extends React.Component {
-  displayShares(object) {
-    Object.values(object).map((value) => (
-      <li>{value.amount}</li>
-    ));
-  }
   render() {
+    const { date, amount, pricePerShare } = this.props.details;
     return (
-      <ul>
-      {this.displayShares(this.props.sharesIssues)}
-      </ul>
+      <div>
+        <h3>Share Issue</h3>
+        <p>{date.toString()}</p>
+        <p>{amount} shares</p>
+        <p>${pricePerShare}/share</p>
+      </div>
     )
   }
 };

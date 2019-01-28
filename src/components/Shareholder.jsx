@@ -1,6 +1,4 @@
 import React from 'react';
-import SharesIssue from './SharesIssue';
-
 
 class Shareholder extends React.Component {
   
@@ -11,8 +9,6 @@ class Shareholder extends React.Component {
         <h3>{name}</h3>
         <h4>{email}</h4>
         <p>{`${address.line1}, ${address.postcode} ${address.city} (${address.country})`}</p>
-        <br/>
-        <SharesIssue sharesIssues={this.props.sharesIssues}/>
       </div>
     )
   }
