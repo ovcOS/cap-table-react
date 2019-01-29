@@ -3,7 +3,7 @@ import Shareholder from './Shareholder';
 import AddShareholdersForm from './AddShareholdersForm'
 import IssueNewSharesForm from './IssueNewSharesForm';
 import SharesIssue from './SharesIssue';
-
+import CapTable from './CapTable';
 
 class App extends React.Component {
   state = {
@@ -35,8 +35,13 @@ class App extends React.Component {
     this.setState({ sharesIssues: newShares });
   };
 
+  updateCapTable = (shareholder, issue) => {
+    ////////////
+  };
+
   render() {
     return (
+      <React.Fragment>
       <div className="menu">
         <span>
           <AddShareholdersForm addShareholder={this.addShareholder}/>
@@ -55,6 +60,10 @@ class App extends React.Component {
           )}
         </span>
       </div>
+      <div>
+      <CapTable holderDetails={this.state.shareholders} issueDetails={this.state.sharesIssues} />
+      </div>
+      </React.Fragment>
     );
   }
 };
