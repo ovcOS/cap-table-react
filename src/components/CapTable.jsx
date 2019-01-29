@@ -36,7 +36,6 @@ class CapTable extends React.Component {
         investedAmount: investedAmount || 0,
       }
     });
-    console.log(capTable)
 
     return (
       <div className="cap-table">

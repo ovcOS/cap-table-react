@@ -22,6 +22,18 @@ body {
   width: 300px;
 }
 
+.button-add {
+  border: 2px solid #FFCA3A;
+  border-radius: 3px;
+}
+
+/* Palette:
+blue: #0CADCF
+salmon: #FF5E5B
+yellow: #FFCA3A
+gray: #273043
+black: #171A21 */
+
 
 /* to make App-logo spin:
 @keyframes App-logo-spin {

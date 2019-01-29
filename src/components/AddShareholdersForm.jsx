@@ -288,7 +288,7 @@ class AddShareholdersForm extends React.Component {
           <option value="ZM">Zambia</option>
           <option value="ZW">Zimbabwe</option>
         </select>
-        <button type="submit" className="button">Add a Shareholder</button>
+        <button type="submit" className="button-add">Add a Shareholder</button>
       </form>
     )
   }

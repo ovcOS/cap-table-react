@@ -12,27 +12,36 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    const localStorageRef = localStorage.getItem('shareholders');
-    if (localStorageRef) {
-      this.setState( {shareholders: JSON.parse(localStorageRef)} )
+    const shareholdersLocal = localStorage.getItem('shareholders');
+    if (shareholdersLocal) {
+      this.setState( {shareholders: JSON.parse(localStorage.getItem('shareholders')) });
+      this.setState( {sharesIssues: JSON.parse(localStorage.getItem('sharesIssues')) });
     }
   };
 
   componentDidUpdate(){
     localStorage.setItem('shareholders', JSON.stringify(this.state.shareholders));
+    localStorage.setItem('sharesIssues', JSON.stringify(this.state.sharesIssues));
   };
 
   addShareholder = shareholder => {
-    const newShareholder = {...this.state.shareholders};
-    newShareholder[`shareholder${Date.now()}`] = shareholder;
-    this.setState({ shareholders: newShareholder });
+    const shareholders = {...this.state.shareholders};
+    shareholders[`shareholder${Date.now()}`] = shareholder;
+    this.setState({ shareholders });
   };
 
   issueNewShares = issue => {
-    const newShares = {...this.state.sharesIssues};
-    newShares[`issue${Date.now()}`] = issue;
-    this.setState({ sharesIssues: newShares });
+    const sharesIssues = {...this.state.sharesIssues};
+    sharesIssues[`issue${Date.now()}`] = issue;
+    this.setState({ sharesIssues });
   };
+
+  startFromScratch = () => {
+    const shareholders = "";
+    const sharesIssues = "";
+    this.setState({ shareholders });
+    this.setState({ sharesIssues });
+  }
 
   render() {
     return (
@@ -43,7 +52,11 @@ class App extends React.Component {
         </span>
         <span>
           {Object.keys(this.state.shareholders).map(shareholder => {
-            return <Shareholder key={shareholder} details={this.state.shareholders[shareholder]} /> }
+            return (
+            <Shareholder
+              key={shareholder}
+              details={this.state.shareholders[shareholder]}/>
+            )}
           )}
         </span>
         <span>
@@ -58,6 +71,7 @@ class App extends React.Component {
       <div>
       <CapTable holderDetails={this.state.shareholders} issueDetails={this.state.sharesIssues} />
       </div>
+      <button className="button" onClick={this.startFromScratch}>RESET!</button>
       </React.Fragment>
     );
   }
