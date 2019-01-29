@@ -9,7 +9,6 @@ class App extends React.Component {
   state = {
     shareholders: {},
     sharesIssues: {},
-    capTable: {}
   };
 
   componentDidMount() {
@@ -33,10 +32,6 @@ class App extends React.Component {
     const newShares = {...this.state.sharesIssues};
     newShares[`issue${Date.now()}`] = issue;
     this.setState({ sharesIssues: newShares });
-  };
-
-  updateCapTable = (shareholder, issue) => {
-    ////////////
   };
 
   render() {
