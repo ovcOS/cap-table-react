@@ -15,6 +15,7 @@ class IssueNewShares extends React.Component {
       pricePerShare: parseInt(this.pricePerShareRef.current.value), 
     };
     this.props.issueNewShares(sharesIssue);
+    event.currentTarget.reset()
   };
 
   populateOptions(options) {
@@ -25,15 +26,16 @@ class IssueNewShares extends React.Component {
  
   render() {
     return (
-     <form onSubmit={this.createIssue}>
-       <select name="shareholderId" ref={this.idRef} type="text" required>
-        {this.populateOptions(this.props.details)}
-       </select>
-       <input name="date" ref={this.dateRef} type="date" required />
-       <input name="amount" type="number" ref={this.amountRef} placeholder="Amount of shares" required />
-       <input name="pricePerShare" type="number" ref={this.pricePerShareRef} placeholder="Price per share($)" required />
-       <button className="button-add" type="submit">Issue Now</button>
-     </form>
+      <form className="form-layout" onSubmit={this.createIssue}>
+        <p className="form-info">And this one to issue new shares...</p>
+        <select name="shareholderId" ref={this.idRef} type="text" required>
+          {this.populateOptions(this.props.details)}
+        </select>
+        <input name="date" ref={this.dateRef} type="date" placeholder="Issue date" required />
+        <input name="amount" type="number" ref={this.amountRef} placeholder="Amount of shares" required />
+        <input name="pricePerShare" type="number" ref={this.pricePerShareRef} placeholder="Price per share ($)" required />
+        <button className="button button-add hover-shadow" type="submit">ISSUE SHARES</button>
+      </form>
     )
   }
 };

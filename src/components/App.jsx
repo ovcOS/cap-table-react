@@ -2,8 +2,9 @@ import React from 'react';
 import Shareholder from './Shareholder';
 import AddShareholdersForm from './AddShareholdersForm'
 import IssueNewSharesForm from './IssueNewSharesForm';
-import SharesIssue from './SharesIssue';
+// import SharesIssue from './SharesIssue';
 import CapTable from './CapTable';
+import Header from './Header';
 
 class App extends React.Component {
   state = {
@@ -45,24 +46,26 @@ class App extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
-      <div className="menu">
-        <div>
-          <AddShareholdersForm addShareholder={this.addShareholder}/>
-          <IssueNewSharesForm issueNewShares={this.issueNewShares} details={this.state.shareholders} />
+      <div className="background">
+      <Header />
+        <div className="menu">
+          <div className="forms">
+            <AddShareholdersForm addShareholder={this.addShareholder}/>
+            <IssueNewSharesForm issueNewShares={this.issueNewShares} details={this.state.shareholders} />
+          </div>
+          <div className="cap-table-div">
+            <CapTable holderDetails={this.state.shareholders} issueDetails={this.state.sharesIssues} />
+          </div>
         </div>
-  
-        <CapTable holderDetails={this.state.shareholders} issueDetails={this.state.sharesIssues} />
+        {/* {Object.keys(this.state.shareholders).map(shareholder => {
+          return (
+          <Shareholder
+            key={shareholder}
+            details={this.state.shareholders[shareholder]}/>
+          )}
+        )} */}
+        <button className="button button-reset hover-shadow" onClick={this.startFromScratch}>RESET!</button>
       </div>
-      {Object.keys(this.state.shareholders).map(shareholder => {
-        return (
-        <Shareholder
-          key={shareholder}
-          details={this.state.shareholders[shareholder]}/>
-        )}
-      )}
-      <button className="button-reset" onClick={this.startFromScratch}>RESET!</button>
-      </React.Fragment>
     );
   }
 };

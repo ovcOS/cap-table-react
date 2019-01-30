@@ -30,13 +30,16 @@ class AddShareholdersForm extends React.Component {
   
   render() {
     return (
-      <form className="add-shareholders-form" onSubmit={this.addShareholder}>
+      <form className="form-layout" onSubmit={this.addShareholder}>
+        <p className="form-info">Use this form to add a new shareholder...</p>
         <input name="name" ref={this.nameRef} type="text" placeholder="Full name" required />
         <input name="email" ref={this.emailRef} type="text" placeholder="Email" required />
         <input name="line1" ref={this.line1Ref} type="text" placeholder="Address line 1" required />
         <input name="line2" ref={this.line2Ref} type="text" placeholder="Address line 2"/>
-        <input name="postcode" ref={this.postcodeRef} type="number" placeholder="Postcode" required />
-        <input name="city" ref={this.cityRef} type="text" placeholder="City" required />
+        <div className="sub-form">
+          <input name="postcode" ref={this.postcodeRef} type="number" placeholder="Postcode" required />
+          <input name="city" ref={this.cityRef} type="text" placeholder="City" required />
+        </div>
         <select defaultValue="CH" ref={this.countryRef}>
           <option value="AF">Afghanistan</option>
           <option value="AX">Åland Islands</option>
@@ -288,7 +291,7 @@ class AddShareholdersForm extends React.Component {
           <option value="ZM">Zambia</option>
           <option value="ZW">Zimbabwe</option>
         </select>
-        <button type="submit" className="button-add">Add a Shareholder</button>
+        <button type="submit" className="button button-add hover-shadow">ADD SHAREHOLDER</button>
       </form>
     )
   }

@@ -1,36 +1,197 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Raleway";
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #FAFAFA;
+  text-align: center;
+}
+
+input, select, option {
+  font-family: "Raleway";
+  font-size: 16px;
+  background-color: transparent;
+  color: #FAFAFA;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #FAFAFA;
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+
+input:focus, select:focus, option:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color:rgba(250, 250, 250, 0.5);
+}
+
+input[name="postcode"] {
+  width: 95px;
+  margin-right: 5px;
+}
+
+input[type="date"]:before {
+  content: attr(placeholder) !important;
+  color:rgba(250, 250, 250, 0.5);
+  margin-right: 0.5em;
+}
+input[type="date"]:focus:before,
+input[type="date"]:valid:before {
+  content: "";
+}
+
+.background {
+  background-color: #0CADCF;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.app-header {
+  margin: 0;
+  padding: 2%;
+  text-align: left;
 }
 
 .menu {
   display: flex;
 }
 
-.menu > * {
-  flex: 1;
+.forms {
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 4%;
 }
 
-.add-shareholders-form {
+.cap-table-div {
+  width: 65vw;
+  display: flex;
+  justify-content: center;
+}
+
+.form-info {
+  font-style: italic;
+  color:rgba(250, 250, 250, 0.8);
+  margin-top: 5px;
+  text-align: left;
+}
+
+.form-layout {
   display: flex;
   flex-direction: column;
   width: 300px;
+  padding-bottom: 1em;
+}
+
+.sub-form {
+  display:flex;
+}
+
+.button {
+  cursor: pointer;
+  height: 40px;
+  border-radius: px;
+  background-color: transparent;
+  border-radius: 25px;
+  border: 1px solid #171A21;
+  color: #171A21;
+  font-size: 16px;
+  margin: 10px 0 20px 0;
+}
+
+.button:focus {
+  outline: none;
 }
 
 .button-add {
-  border: 2px solid #FFCA3A;
-  border-radius: 3px;
+  background-color: #FCBE02;
 }
+
+.button-reset {
+  background-color: crimson;
+  color: #FAFAFA;
+}
+
+
+
+
+@keyframes hover {
+	50% {
+		transform: translateY(-3px);
+	}
+	100% {
+		transform: translateY(-6px);
+	}
+}
+
+@keyframes hover-shadow {
+	0% {
+		transform: translateY(6px);
+		opacity: .4;
+	}
+	50% {
+		transform: translateY(3px);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(6px);
+		opacity: .4;
+	}
+}
+
+.hover-shadow {
+	display: inline-block;
+	position: relative;
+	transition-duration: .3s;
+  transition-property: transform;
+}
+
+.hover-shadow:before {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 80%);
+  transition-duration: .3s;
+  transition-property: transform opacity;
+}
+
+.hover-shadow:hover {
+  transform: translateY(-6px);
+  animation-name: hover;
+  animation-duration: 1.5s;
+  animation-delay: .3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.hover-shadow:hover:before {
+  opacity: .4;
+  transform: translateY(6px);
+  animation-name: hover-shadow;
+  animation-duration: 1.5s;
+  animation-delay: .3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
 
 /* Palette:
 blue: #0CADCF
-salmon: #FF5E5B
-yellow: #FFCA3A
+green: #87A330
+yellow: #FCBE02
 gray: #273043
 black: #171A21 */
 
