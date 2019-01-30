@@ -47,34 +47,26 @@ class App extends React.Component {
     return (
       <React.Fragment>
       <div className="menu">
-        <span>
+        <div>
           <AddShareholdersForm addShareholder={this.addShareholder}/>
-        </span>
-        <span>
-          {Object.keys(this.state.shareholders).map(shareholder => {
-            return (
-            <Shareholder
-              key={shareholder}
-              details={this.state.shareholders[shareholder]}/>
-            )}
-          )}
-        </span>
-        <span>
           <IssueNewSharesForm issueNewShares={this.issueNewShares} details={this.state.shareholders} />
-        </span>
-        <span>
-          {Object.keys(this.state.sharesIssues).map(issue => {
-            return <SharesIssue key={issue} details={this.state.sharesIssues[issue]} /> }
-          )}
-        </span>
+        </div>
+  
+        <CapTable holderDetails={this.state.shareholders} issueDetails={this.state.sharesIssues} />
       </div>
-      <div>
-      <CapTable holderDetails={this.state.shareholders} issueDetails={this.state.sharesIssues} />
-      </div>
-      <button className="button" onClick={this.startFromScratch}>RESET!</button>
+      {Object.keys(this.state.shareholders).map(shareholder => {
+        return (
+        <Shareholder
+          key={shareholder}
+          details={this.state.shareholders[shareholder]}/>
+        )}
+      )}
+      <button className="button-reset" onClick={this.startFromScratch}>RESET!</button>
       </React.Fragment>
     );
   }
 };
-
+    /* {Object.keys(this.state.sharesIssues).map(issue => {
+        return <SharesIssue key={issue} details={this.state.sharesIssues[issue]} /> }
+      )} */
 export default App;

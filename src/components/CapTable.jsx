@@ -1,7 +1,25 @@
 import React from 'react';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 class CapTable extends React.Component {
-  
+
+  renderCapTable = (investor) => {
+    return (
+      <CSSTransition
+        classNames="cap-table"
+        timeout={{enter:5000, exit:5000}}
+        key={investor.id}>
+        <tr>
+          <td>{investor.name}</td>
+          <td>{investor.amountOfShares}</td>
+          <td>{investor.percentage}%</td>
+          <td>${investor.investedAmount}</td>
+          <td>{investor.address}</td>
+        </tr>
+      </CSSTransition>
+    )      
+  }
+
   render() {
     const shareholders = Object.values(this.props.holderDetails);
     const issues = Object.values(this.props.issueDetails);
@@ -36,15 +54,24 @@ class CapTable extends React.Component {
         investedAmount: investedAmount || 0,
       }
     });
-
+    
     return (
-      <div className="cap-table">
-        <h3>Cap table</h3>
-        {capTable.map(investor => <p key={investor.id}>{`${investor.name} lives on ${investor.address},
-        owns ${investor.amountOfShares} shares, which respresents a ${investor.percentage}% of the company,
-        and invested a total of $${investor.investedAmount}`}</p>)}       
-
-      </div>
+      <React.Fragment>
+        <table>
+          <thead>
+            <tr>
+              <th>Investor</th>
+              <th>Amount of Shares</th>
+              <th>Percent Owned</th>
+              <th>Capital invested</th>
+              <th>Address</th>
+            </tr>
+          </thead>
+          <TransitionGroup component="tbody" className="cap-table">
+            {capTable.map(this.renderCapTable)}
+          </TransitionGroup>
+        </table>
+      </React.Fragment>
     )
   }
 };
