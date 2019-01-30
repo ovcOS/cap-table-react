@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #FAFAFA;
-  text-align: center;
+  text-align: left;
 }
 
 input, select, option {
@@ -23,6 +23,8 @@ input, select, option {
 
 input:focus, select:focus, option:focus {
   outline: none;
+  border: 1px solid #FCBE02;
+  box-shadow: 0px 0px 0px 1px #FCBE02; 
 }
 
 input::placeholder {
@@ -34,6 +36,17 @@ input[name="postcode"] {
   margin-right: 5px;
 }
 
+input[type="date"] {
+  background: transparent url(../icons/calendar.png)  97% 50% no-repeat;
+  background-size: 25px;
+}
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
 input[type="date"]:before {
   content: attr(placeholder) !important;
   color:rgba(250, 250, 250, 0.5);
@@ -42,6 +55,16 @@ input[type="date"]:before {
 input[type="date"]:focus:before,
 input[type="date"]:valid:before {
   content: "";
+  color:rgba(250, 250, 250, 0.5);
+}
+
+tr {
+  height: 40px;
+}
+
+td, th {
+  min-width: 170px;
+  flex: 1;
 }
 
 .background {
@@ -53,7 +76,6 @@ input[type="date"]:valid:before {
 .app-header {
   margin: 0;
   padding: 2%;
-  text-align: left;
 }
 
 .menu {
@@ -61,7 +83,7 @@ input[type="date"]:valid:before {
 }
 
 .forms {
-  width: 35vw;
+  width: 30vw;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -69,9 +91,10 @@ input[type="date"]:valid:before {
 }
 
 .cap-table-div {
-  width: 65vw;
+  width: 70vw;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: 1%;
 }
 
 .form-info {
@@ -95,7 +118,6 @@ input[type="date"]:valid:before {
 .button {
   cursor: pointer;
   height: 40px;
-  border-radius: px;
   background-color: transparent;
   border-radius: 25px;
   border: 1px solid #171A21;
@@ -116,7 +138,6 @@ input[type="date"]:valid:before {
   background-color: crimson;
   color: #FAFAFA;
 }
-
 
 
 
@@ -190,10 +211,11 @@ input[type="date"]:valid:before {
 
 /* Palette:
 blue: #0CADCF
-green: #87A330
 yellow: #FCBE02
 gray: #273043
-black: #171A21 */
+black: #171A21
+white: #FAFAFA 
+green: #87A330 */
 
 
 /* to make App-logo spin:

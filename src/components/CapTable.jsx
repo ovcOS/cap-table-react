@@ -12,7 +12,7 @@ class CapTable extends React.Component {
         <tr>
           <td>{investor.name}</td>
           <td>{investor.amountOfShares}</td>
-          <td>{investor.percentage}%</td>
+          <td>{investor.percentage.toFixed(2)}%</td>
           <td>${investor.investedAmount}</td>
           <td>{investor.address}</td>
         </tr>
@@ -61,7 +61,7 @@ class CapTable extends React.Component {
           <thead>
             <tr>
               <th>Investor</th>
-              <th>Amount of Shares</th>
+              <th>Shares</th>
               <th>Percent Owned</th>
               <th>Capital invested</th>
               <th>Address</th>

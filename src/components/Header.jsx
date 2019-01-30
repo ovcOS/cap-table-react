@@ -6,7 +6,6 @@ const Header = () => (
       THE CAP TABLE APP
     </h1>
   </header>
-    
 )
 
 export default Header;
