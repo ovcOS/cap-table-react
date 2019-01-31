@@ -1,5 +1,6 @@
 import React from 'react';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { commafy } from '../helpers'
 
 class CapTable extends React.Component {
 
@@ -9,11 +10,11 @@ class CapTable extends React.Component {
         classNames="cap-table"
         timeout={{enter:5000, exit:5000}}
         key={investor.id}>
-        <tr>
+        <tr className="table-columns">
           <td>{investor.name}</td>
-          <td>{investor.amountOfShares}</td>
+          <td>{commafy(investor.amountOfShares)}</td>
           <td>{investor.percentage.toFixed(2)}%</td>
-          <td>${investor.investedAmount}</td>
+          <td>${commafy(investor.investedAmount)}</td>
           <td>{investor.address}</td>
         </tr>
       </CSSTransition>
@@ -48,7 +49,7 @@ class CapTable extends React.Component {
       return {
         id: shareholder._id,
         name: shareholder.name,
-        address: shareholder.address.line1,
+        address: `${shareholder.address.line1}, ${shareholder.address.postcode} - ${shareholder.address.city} (${shareholder.address.country})`,
         amountOfShares: individualShares || 0,
         percentage: (individualShares / totalShares * 100) || 0,
         investedAmount: investedAmount || 0,
@@ -59,11 +60,11 @@ class CapTable extends React.Component {
       <React.Fragment>
         <table>
           <thead>
-            <tr>
+            <tr className="table-columns">
               <th>Investor</th>
               <th>Shares</th>
-              <th>Percent Owned</th>
-              <th>Capital invested</th>
+              <th>Owns</th>
+              <th>Invested</th>
               <th>Address</th>
             </tr>
           </thead>

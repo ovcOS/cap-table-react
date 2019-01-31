@@ -58,15 +58,6 @@ input[type="date"]:valid:before {
   color:rgba(250, 250, 250, 0.5);
 }
 
-tr {
-  height: 40px;
-}
-
-td, th {
-  min-width: 170px;
-  flex: 1;
-}
-
 .background {
   background-color: #0CADCF;
   min-height: 100vh;
@@ -83,13 +74,6 @@ td, th {
   flex-direction: column;
   align-items: flex-start;
   padding-left: 4%;
-}
-
-.cap-table-div {
-  width: 70vw;
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 1%;
 }
 
 .form-info {
@@ -115,8 +99,8 @@ td, th {
   height: 40px;
   background-color: transparent;
   border-radius: 25px;
-  border: 1px solid #171A21;
-  color: #171A21;
+  border: 1px solid #273043;
+  color: #273043;
   font-size: 16px;
   margin: 10px 0 20px 0;
 }
@@ -133,14 +117,6 @@ td, th {
   background-color: crimson;
   color: #FAFAFA;
 }
-
-
-
-
-
-
-
-
 
 @keyframes hover {
 	50% {
@@ -211,20 +187,8 @@ td, th {
 
 
 /* Palette:
-blue: #0CADCF
-yellow: #FCBE02
-gray: #273043
-black: #171A21
-white: #FAFAFA 
-green: #87A330 */
-
-
-/* to make App-logo spin:
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+ledgy-blue: #0CADCF
+daring-yellow: #FCBE02
+dark-gray: #273043
+light-black: #171A21
+snow-white: #FAFAFA */

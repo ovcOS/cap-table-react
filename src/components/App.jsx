@@ -1,8 +1,6 @@
 import React from 'react';
-import Shareholder from './Shareholder';
 import AddShareholdersForm from './AddShareholdersForm'
 import IssueNewSharesForm from './IssueNewSharesForm';
-// import SharesIssue from './SharesIssue';
 import CapTable from './CapTable';
 import Header from './Header';
 
@@ -57,19 +55,23 @@ class App extends React.Component {
             <CapTable holderDetails={this.state.shareholders} issueDetails={this.state.sharesIssues} />
           </div>
         </div>
-        {/* {Object.keys(this.state.shareholders).map(shareholder => {
-          return (
-          <Shareholder
-            key={shareholder}
-            details={this.state.shareholders[shareholder]}/>
-          )}
-        )} */}
+        {}
         <button className="button button-reset hover-shadow" onClick={this.startFromScratch}>RESET!</button>
       </div>
     );
   }
 };
-    /* {Object.keys(this.state.sharesIssues).map(issue => {
-        return <SharesIssue key={issue} details={this.state.sharesIssues[issue]} /> }
-      )} */
+
 export default App;
+
+/*  {Object.keys(this.state.shareholders).map(shareholder => {
+        return (
+        <Shareholder
+          key={shareholder}
+        details={this.state.shareholders[shareholder]}/>
+      )}
+    )}
+    {Object.keys(this.state.sharesIssues).map(issue => {
+      return <SharesIssue key={issue} details={this.state.sharesIssues[issue]} /> }
+    )}
+*/
