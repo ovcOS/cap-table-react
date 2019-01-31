@@ -51,7 +51,7 @@ class App extends React.Component {
             <AddShareholdersForm addShareholder={this.addShareholder}/>
             <IssueNewSharesForm issueNewShares={this.issueNewShares} details={this.state.shareholders} />
           </div>
-          <div className="cap-table-div">
+          <div className="cap-table">
             <CapTable holderDetails={this.state.shareholders} issueDetails={this.state.sharesIssues} />
           </div>
         </div>

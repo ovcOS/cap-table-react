@@ -8,7 +8,7 @@ class CapTable extends React.Component {
     return (
       <CSSTransition
         classNames="cap-table"
-        timeout={{enter:5000, exit:5000}}
+        timeout={{enter:1000, exit:1000}}
         key={investor.id}>
         <tr className="table-columns">
           <td>{investor.name}</td>
@@ -68,7 +68,7 @@ class CapTable extends React.Component {
               <th>Address</th>
             </tr>
           </thead>
-          <TransitionGroup component="tbody" className="cap-table">
+          <TransitionGroup component="tbody">
             {capTable.map(this.renderCapTable)}
           </TransitionGroup>
         </table>
