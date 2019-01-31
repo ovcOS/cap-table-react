@@ -12,9 +12,33 @@ class CapTable extends React.Component {
         key={investor.id}>
         <tr className="table-columns">
           <td>{investor.name}</td>
-          <td>{commafy(investor.amountOfShares)}</td>
-          <td>{investor.percentage.toFixed(2)}%</td>
-          <td>${commafy(investor.investedAmount)}</td>
+          <TransitionGroup component="td" className="count">
+            <CSSTransition
+              classNames="count"
+              key={investor.amountOfShares}
+              timeout={{enter:3000, exit:3000}}
+            >
+              <span>{commafy(investor.amountOfShares)}</span>
+            </CSSTransition>
+          </TransitionGroup>
+          <TransitionGroup component="td" className="count">
+            <CSSTransition
+              classNames="count"
+              key={investor.amountOfShares}
+              timeout={{enter:3000, exit:3000}}
+            >
+              <span>{investor.percentage.toFixed(2)}%</span>
+            </CSSTransition>
+          </TransitionGroup>
+          <TransitionGroup component="td" className="count">
+            <CSSTransition
+              classNames="count"
+              key={investor.amountOfShares}
+              timeout={{enter:3000, exit:3000}}
+            >
+              <span>${commafy(investor.investedAmount)}</span>
+            </CSSTransition>
+          </TransitionGroup>
           <td>{investor.address}</td>
         </tr>
       </CSSTransition>
@@ -49,7 +73,8 @@ class CapTable extends React.Component {
       return {
         id: shareholder._id,
         name: shareholder.name,
-        address: `${shareholder.address.line1}, ${shareholder.address.postcode} - ${shareholder.address.city} (${shareholder.address.country})`,
+        address: `${shareholder.address.line1}, ${shareholder.address.postcode}
+                - ${shareholder.address.city} (${shareholder.address.country})`,
         amountOfShares: individualShares || 0,
         percentage: (individualShares / totalShares * 100) || 0,
         investedAmount: investedAmount || 0,

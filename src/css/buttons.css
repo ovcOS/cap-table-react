@@ -1,0 +1,108 @@
+.button {
+  cursor: pointer;
+  height: 40px;
+  border-radius: 25px;
+  border: 1px solid #273043;
+  color: #273043;
+  font-size: 16px;
+  margin: 10px 0 20px 0;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button-add {
+  background-color: #FCBE02;
+}
+
+@keyframes hover {
+	50% {
+		transform: translateY(-3px);
+	}
+	100% {
+		transform: translateY(-6px);
+	}
+}
+
+@keyframes hover-shadow {
+	0% {
+		transform: translateY(6px);
+		opacity: .4;
+	}
+	50% {
+		transform: translateY(3px);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(6px);
+		opacity: .4;
+	}
+}
+
+.hover-shadow {
+	display: inline-block;
+	position: relative;
+	transition-duration: .3s;
+  transition-property: transform;
+}
+
+.hover-shadow:before {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 80%);
+  transition-duration: .3s;
+  transition-property: transform opacity;
+}
+
+.hover-shadow:hover {
+  transform: translateY(-6px);
+  animation-name: hover;
+  animation-duration: 1.5s;
+  animation-delay: .3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.hover-shadow:hover:before {
+  opacity: .4;
+  transform: translateY(6px);
+  animation-name: hover-shadow;
+  animation-duration: 1.5s;
+  animation-delay: .3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.button-populate {
+  background-color: #FCBE02;
+  font-size: 12px;
+  padding: 0 1em;
+}
+
+.button-reset {
+  background-color:#DD403A;
+  color: #FAFAFA;
+  position: absolute;
+  bottom: 2em;
+  right: 2em;
+  padding: 0.5em;
+  margin: 0;
+  border: 1px solid #273043;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-reset:focus {
+  outline: none;
+}

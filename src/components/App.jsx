@@ -3,6 +3,7 @@ import AddShareholdersForm from './AddShareholdersForm'
 import IssueNewSharesForm from './IssueNewSharesForm';
 import CapTable from './CapTable';
 import Header from './Header';
+import samples from '../samples'
 
 class App extends React.Component {
   state = {
@@ -29,6 +30,12 @@ class App extends React.Component {
     this.setState({ shareholders });
   };
 
+  loadSamples = () => {
+    this.setState({ shareholders: samples.sampleInvestors })
+    setTimeout(500);
+    this.setState({ sharesIssues: samples.sampleIssues })
+  }
+
   issueNewShares = issue => {
     const sharesIssues = {...this.state.sharesIssues};
     sharesIssues[`issue${Date.now()}`] = issue;
@@ -45,7 +52,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="background">
-      <Header />
+      <Header loadSamples={this.loadSamples} />
         <div className="menu">
           <div className="forms">
             <AddShareholdersForm addShareholder={this.addShareholder}/>
@@ -55,8 +62,7 @@ class App extends React.Component {
             <CapTable holderDetails={this.state.shareholders} issueDetails={this.state.sharesIssues} />
           </div>
         </div>
-        {}
-        <button className="button button-reset hover-shadow" onClick={this.startFromScratch}>RESET!</button>
+        <button className="button-reset hover-shadow" onClick={this.startFromScratch}>RESET</button>
       </div>
     );
   }

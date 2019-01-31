@@ -90,6 +90,12 @@
   margin: 2px 0 0 0;
 }
 
+.header-right {
+  display: flex;
+  justify-content: space-between;
+  min-width: 265px;
+}
+
 .piggy-bank {
   height: 45px;
   padding-bottom: 22px;

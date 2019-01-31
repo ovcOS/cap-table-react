@@ -22,19 +22,21 @@ th, td {
   padding: 10px;
 }
 
+td {
+  height: 65px;
+}
 
 .cap-table {
   width: 70vw;
   display: flex;
-  justify-content: flex-start;
-  padding: 2% 7% 2% 1%;
+  justify-content: center;
+  padding: 2.5em;
 }
 
 .cap-table-enter {
   transform: translateY(100%);
   transition: 1s;
   padding: 0 !important;
-  height: 75px;
   opacity: 0;
 }
 
@@ -47,14 +49,12 @@ th, td {
 .cap-table-enter-done {
   border-bottom: 1px solid #FCBE02;
   font-weight: 400;
-  height: 75px;
 }
 
 .cap-table-exit {
   transform: translateX(0);
   transition: 1s;
   padding: 10px !important;
-  height: 75px;
   opacity: 1;
 }
 
@@ -73,7 +73,7 @@ tr:nth-child(2n) {
 }
 
 .table-columns td:nth-child(1), .table-columns th:nth-child(1) {
-  min-width: 180px;
+  min-width: 160px;
   font-weight: 500;
 }
 
@@ -82,13 +82,34 @@ tr:nth-child(2n) {
 }
 
 .table-columns td:nth-child(3), .table-columns th:nth-child(3) {
-  min-width: 90px;
+  min-width: 80px;
 }
 
 .table-columns td:nth-child(4), .table-columns th:nth-child(4) {
-  min-width: 90px;
+  min-width: 100px;
 }
 
 .table-columns td:nth-child(5), .table-columns th:nth-child(5) {
   min-width: 300px;
+}
+
+.count-enter {
+  transition: 3s;
+  opacity: 0.3;
+}
+
+.count-enter-active {
+  opacity: 1;
+}
+
+.count-exit {
+  transition: 3s;
+  opacity: 1;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.count-exit-active {
+  opacity: 0;
 }
