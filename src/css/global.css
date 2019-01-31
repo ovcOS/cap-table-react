@@ -73,11 +73,6 @@ td, th {
   height: 100%;
 }
 
-.app-header {
-  margin: 0;
-  padding: 2%;
-}
-
 .menu {
   display: flex;
 }
@@ -138,6 +133,12 @@ td, th {
   background-color: crimson;
   color: #FAFAFA;
 }
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,97 @@
+.app-header {
+  margin: 0;
+  padding: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-box {
+  border: 1px transparent;
+  position: relative;
+  width: 348px;
+  height: 74px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.header-box span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.header-box span:nth-child(1) {
+  transform: rotate(0deg);
+  top: 0;
+  left: 0;
+}
+
+.header-box span:nth-child(2) {
+  transform: rotate(90deg);
+  left: 137px;
+}
+
+.header-box span:nth-child(3) {
+  transform: rotate(180deg);
+}
+
+.header-box span:nth-child(4) {
+  transform: rotate(270deg);
+  right: 137.5px;
+}
+
+.header-box span:nth-child(2):before {
+  animation-delay: -2s;
+}
+
+.header-box span:nth-child(4):before {
+  animation-delay: -2s;
+}
+
+.header-box span:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #FCBE02;
+  animation: spinning-border 6s linear infinite;
+}
+
+@keyframes spinning-border {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  50.1% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
+.header-content {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+}
+
+.header-content > h1 {
+  margin: 2px 0 0 0;
+}
+
+.piggy-bank {
+  height: 45px;
+  padding-bottom: 22px;
+  padding-right: 2%;
+}
