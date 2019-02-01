@@ -4,6 +4,7 @@ import IssueNewSharesForm from './IssueNewSharesForm';
 import CapTable from './CapTable';
 import Header from './Header';
 import samples from '../samples'
+import Shareholder from './Shareholder'
 
 class App extends React.Component {
   state = {
@@ -29,7 +30,22 @@ class App extends React.Component {
     shareholders[`shareholder${Date.now()}`] = shareholder;
     this.setState({ shareholders });
   };
-  
+
+  updateShareholder = (key, updatedHolder) => {
+    const shareholders = {...this.state.shareholders};
+    shareholders[key] = updatedHolder;
+    this.setState({ shareholders })
+  };
+
+  deleteShareholder = (holder, issues) => {
+    const shareholders = {...this.state.shareholders};
+    const sharesIssues = {...this.state.sharesIssues};
+    issues.map(issue => delete sharesIssues[issue]);
+    this.setState( {sharesIssues} )
+    delete shareholders[holder];
+    this.setState({ shareholders })
+  };
+
   issueNewShares = issue => {
     const sharesIssues = {...this.state.sharesIssues};
     sharesIssues[`issue${Date.now()}`] = issue;
@@ -63,6 +79,17 @@ class App extends React.Component {
           <div className="cap-table">
             <CapTable holderDetails={this.state.shareholders} issueDetails={this.state.sharesIssues} />
           </div>
+        </div>
+        <div>
+          {Object.keys(this.state.shareholders).map(shareholder => {
+            return <Shareholder
+                    key={shareholder}
+                    index={shareholder}
+                    holderDetails={this.state.shareholders[shareholder]}
+                    issueDetails={this.state.sharesIssues}
+                    updateShareholder={this.updateShareholder}
+                    deleteShareholder={this.deleteShareholder}/>
+          })}
         </div>
         <button className="button-reset hover-shadow" onClick={this.startFromScratch}>RESET</button>
       </div>
