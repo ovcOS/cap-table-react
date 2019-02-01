@@ -3,7 +3,6 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { commafy } from '../helpers'
 import arrow from '../icons/arrow.png'
  
-
 class CapTable extends React.Component {
 
   renderCapTable = (investor) => {

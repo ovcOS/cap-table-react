@@ -71,15 +71,3 @@ class App extends React.Component {
 };
 
 export default App;
-
-/*  {Object.keys(this.state.shareholders).map(shareholder => {
-        return (
-        <Shareholder
-          key={shareholder}
-        details={this.state.shareholders[shareholder]}/>
-      )}
-    )}
-    {Object.keys(this.state.sharesIssues).map(issue => {
-      return <SharesIssue key={issue} details={this.state.sharesIssues[issue]} /> }
-    )}
-*/
