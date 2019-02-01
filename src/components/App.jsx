@@ -29,18 +29,20 @@ class App extends React.Component {
     shareholders[`shareholder${Date.now()}`] = shareholder;
     this.setState({ shareholders });
   };
-
-  loadSamples = () => {
-    this.setState({ shareholders: samples.sampleInvestors })
-    setTimeout(500);
-    this.setState({ sharesIssues: samples.sampleIssues })
-  }
-
+  
   issueNewShares = issue => {
     const sharesIssues = {...this.state.sharesIssues};
     sharesIssues[`issue${Date.now()}`] = issue;
     this.setState({ sharesIssues });
   };
+
+  loadSamples = () => {
+    const shareholders = {...this.state.shareholders, ...samples.sampleInvestors};
+    this.setState({ shareholders })
+    setTimeout(500);
+    const sharesIssues = {...this.state.sharesIssues, ...samples.sampleIssues};
+    this.setState({ sharesIssues })
+  }
 
   startFromScratch = () => {
     const shareholders = "";

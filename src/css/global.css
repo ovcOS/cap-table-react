@@ -37,6 +37,10 @@ input[name="postcode"] {
   margin-right: 5px;
 }
 
+input[name="city"] {
+  width: 185px;
+}
+
 input[type="date"] {
   background: transparent url(../icons/calendar.png)  97% 50% no-repeat;
   background-size: 25px;

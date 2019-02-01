@@ -8,12 +8,9 @@
   margin: 10px 0 20px 0;
 }
 
-.button:focus {
-  outline: none;
-}
-
 .button-add {
   background-color: #FCBE02;
+  transition: 0.5s;
 }
 
 @keyframes hover {
@@ -87,22 +84,26 @@
   background-color: #FCBE02;
   font-size: 12px;
   padding: 0 1em;
+  transition: 0.5s;
 }
 
 .button-reset {
   background-color:#DD403A;
   color: #FAFAFA;
-  position: absolute;
-  bottom: 2em;
-  right: 2em;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
   padding: 0.5em;
   margin: 0;
   border: 1px solid #273043;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.5s;
 }
 
-.button-reset:focus {
+.button-add:focus, .button-populate:focus, .button-reset:focus {
   outline: none;
+  filter: brightness(80%);
+  transition: 0.5s;
 }
