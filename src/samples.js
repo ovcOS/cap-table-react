@@ -14,7 +14,7 @@ const samples = {
     },
     investor2 : {
       _id: 'id2',
-      name: "Michelle O'bima",
+      name: "Michelle O'beans",
       email: "gotguns@bama.com",
       address: {
         line1: "245 Fourth Ave",
@@ -26,7 +26,7 @@ const samples = {
     },
     investor3 : {
       _id: 'id3',
-      name: "Jeffy Besos",
+      name: "Jeffrey Kisses",
       email: "biggestjungle@earth.io",
       address: {
         line1: "Palmeira Blvd 792",
@@ -72,8 +72,8 @@ const samples = {
     issue2: {
       shareholderId: 'id2',
       date: new Date(),
-      amount: 80000,
-      pricePerShare: 270, 
+      amount: 125000,
+      pricePerShare: 210, 
     },
     issue3: {
       shareholderId: 'id3',
@@ -84,7 +84,7 @@ const samples = {
     issue4: {
       shareholderId: 'id4',
       date: new Date(),
-      amount: 100000,
+      amount: 103500,
       pricePerShare: 90, 
     },
     issue5: {

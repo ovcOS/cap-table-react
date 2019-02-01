@@ -90,7 +90,7 @@ tr:nth-child(2n) {
 }
 
 .table-columns td:nth-child(5), .table-columns th:nth-child(5) {
-  min-width: 300px;
+  min-width: 330px;
 }
 
 .count-enter {
@@ -112,4 +112,21 @@ tr:nth-child(2n) {
 
 .count-exit-active {
   opacity: 0;
+}
+
+.cap-info {
+  font-family: 'Handlee', cursive;
+  font-size: 18px;
+  display: flex;
+  position: absolute;
+  top: 5em;
+  -webkit-transform: skewX(-10deg);
+  transform: skewX(-10deg);
+  right: 38%;
+}
+
+.cap-info img {
+  height: 35px;
+  -webkit-transform: scaleX(-1) rotate(180deg);
+  transform: scaleX(-1) rotate(180deg);
 }

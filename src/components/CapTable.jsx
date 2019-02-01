@@ -1,6 +1,8 @@
 import React from 'react';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { commafy } from '../helpers'
+import arrow from '../icons/arrow.png'
+ 
 
 class CapTable extends React.Component {
 
@@ -83,6 +85,10 @@ class CapTable extends React.Component {
     
     return (
       <React.Fragment>
+        <div className="cap-info">
+          <p>All your additions will go here...</p>
+          <img src={arrow} alt=" v "/>
+        </div>
         <table>
           <thead>
             <tr className="table-columns">
