@@ -2,7 +2,7 @@ const samples = {
   sampleInvestors: {
     investor1 : {
       _id: 'id1',
-      name: "Elon Must",
+      name: "Elon Mustang",
       email: "teslainarocket@falcon.com",
       address: {
         line1: "Rocket Rd",

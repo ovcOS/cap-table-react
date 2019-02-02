@@ -37,7 +37,7 @@
   padding-right: 10px;
   font-size: 18px;
   transform: skewX(-10deg);
-  width: 60px;
+  min-width: 60px;
 }
 
 .card--email {
@@ -50,7 +50,7 @@
   min-width: 300px;
 }
 
-.card--email input, .card--address input, .card--address select {
+.card--email input, .card--address input, .card--address select, .shares-issue input {
   text-align: center;
   background-color: #0CADCF;
 }
@@ -78,9 +78,42 @@
   margin-bottom: 20px;
 }
 
-
 .card hr {
   border: 2px solid #0CADCF;
 }
 
+.shares-issue {
+  display: inline-block;
+  padding-top: 1em;
+  position: relative;
+}
 
+.issue-title {
+  border-bottom: 2px dashed #FCBE02;
+}
+
+.issue-details input {
+  margin-right: 2em;
+}
+
+.issue-details input[name="date"] {
+  width: 300px;
+}
+
+.shareholder-enter {
+  transition: 5s;
+  opacity: 0.3;
+}
+
+.shareholder-enter-active {
+  opacity: 1;
+}
+
+.shareholder-exit {
+  transition: 5s;
+  opacity: 1;
+}
+
+.shareholder-exit-active {
+  opacity: 0;
+}

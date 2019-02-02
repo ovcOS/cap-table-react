@@ -14,16 +14,27 @@ class SharesIssue extends React.Component {
   }
 
   render() {
-    
     return(
-      <div>
-        <p>hello</p>
-        <input name="amount" type="number" onChange={this.handleChange} value={this.props.issueDetails.amount} placeholder="Amount of shares"/>
-        <input name="pricePerShare" type="number" onChange={this.handleChange} value={this.props.issueDetails.pricePerShare} placeholder="Price per share ($)"/>
-        <input name="date" type="text" value={this.props.issueDetails.date} readOnly />
-        <button onClick={this.deleteIssue}>DELETE</button>
+      <div className="shares-issue">
+        <p className="alter-font issue-title">share {this.props.index}</p>
+        <div className="issue-details">
+          <span className="alter-font">shares:</span>
+          <input name="amount"
+                 type="number"
+                 onChange={this.handleChange} 
+                 value={this.props.issueDetails.amount}
+                 placeholder="Amount of shares"/>
+          <span className="alter-font">price/share ($):</span>    
+          <input name="pricePerShare"
+                 type="number"
+                 onChange={this.handleChange}
+                 value={this.props.issueDetails.pricePerShare}
+                 placeholder="Price per share ($)"/>
+          <span className="alter-font">issue date (read-only):</span>
+          <input name="date" type="text" value={this.props.issueDetails.date} readOnly />
+        </div>
+        <button className="button-delete-issue" onClick={this.deleteIssue}></button>
       </div>
-
     )
   }
 };

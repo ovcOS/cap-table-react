@@ -87,7 +87,7 @@
   transition: 0.5s;
 }
 
-.button-delete {
+.button-delete-holder {
   background-color: #FCBE02;
   color: #273043;
   padding: 0.5em;
@@ -99,27 +99,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 100px;
-}
-
-.button-delete:hover {
-  background-color: #DD403A;
-  color: #FAFAFA;
-  border: 1px solid #273043;
-  font-weight: 500;
-  border-radius: 5px;
-}
-
-.button-delete::after {
-  content: "DELETE";
-}
-
-.button-reset::after {
-  content: "RESET";
-}
-
-.button-delete:hover::after, .button-reset:hover::after {
-  content: "SURE?";
+  width: 175px;
 }
 
 .button-reset {
@@ -143,7 +123,48 @@
   padding: 1em;
 }
 
-.button-add:focus, .button-populate:focus, .button-delete:focus, .button-reset:focus {
+.button-delete-issue {
+  background-color: #FCBE02;
+  color: #273043;
+  font-size: 14px;
+  border-radius: 5px 5px 0 0;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.5s;
+  position: absolute;
+  top: 39px;
+  right: 0;
+  width: 150px;
+  padding: 1px;
+}
+
+.button-delete-holder:hover, .button-delete-issue:hover {
+  background-color: #DD403A;
+  color: #FAFAFA;
+  border: 1px solid #273043;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.button-delete-holder::after {
+  content: "DELETE INVESTOR";
+}
+
+.button-delete-issue::after {
+  content: "DELETE ISSUE";
+}
+
+.button-reset::after {
+  content: "RESET";
+}
+
+.button-delete-holder:hover::after, .button-reset:hover::after, .button-delete-issue:hover::after {
+  content: "SURE?";
+}
+
+.button-add:focus, .button-populate:focus,
+.button-delete-holder:focus, .button-reset:focus,
+.button-delete-issue:focus {
   outline: none;
   filter: brightness(80%);
   transition: 0.5s;

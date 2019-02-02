@@ -39,7 +39,7 @@ class Shareholder extends React.Component {
 
     return (
       <TransitionGroup className="shareholder">
-        <CSSTransition timeout={{enter:100, exit:100}} classNames="shareholder">
+        <CSSTransition timeout={{enter:5000, exit:5000}} classNames="shareholder">
           <div className="card">
             <input className="card--name" type="text" name="name" onChange={this.handleNameChange} value={name}/>
             <div className="card--email">
@@ -320,7 +320,7 @@ class Shareholder extends React.Component {
                         deleteIssue={this.props.deleteIssue} />
               }
             )}
-            <button className="button-delete" onClick={this.deleteShareholder}></button>
+            <button className="button-delete-holder" onClick={this.deleteShareholder}></button>
           </div>
         </CSSTransition>
       </TransitionGroup>
