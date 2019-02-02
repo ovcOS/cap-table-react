@@ -9,6 +9,10 @@ class SharesIssue extends React.Component {
     this.props.updateIssue(this.props.index, updatedIssue);
   }
 
+  deleteIssue = () => {
+    this.props.deleteIssue(this.props.index)
+  }
+
   render() {
     
     return(
@@ -17,6 +21,7 @@ class SharesIssue extends React.Component {
         <input name="amount" type="number" onChange={this.handleChange} value={this.props.issueDetails.amount} placeholder="Amount of shares"/>
         <input name="pricePerShare" type="number" onChange={this.handleChange} value={this.props.issueDetails.pricePerShare} placeholder="Price per share ($)"/>
         <input name="date" type="text" value={this.props.issueDetails.date} readOnly />
+        <button onClick={this.deleteIssue}>DELETE</button>
       </div>
 
     )

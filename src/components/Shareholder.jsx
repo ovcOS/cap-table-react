@@ -312,7 +312,12 @@ class Shareholder extends React.Component {
             </div>
             <hr/>
             {issues.map(issue => {
-              return  <SharesIssue key={issue[0]} index={issue[0]} issueDetails={issue[1]} updateIssue={this.props.updateIssue} />
+              return  <SharesIssue
+                        key={issue[0]}
+                        index={issue[0]}
+                        issueDetails={issue[1]}
+                        updateIssue={this.props.updateIssue}
+                        deleteIssue={this.props.deleteIssue} />
               }
             )}
             <button className="button-delete" onClick={this.deleteShareholder}></button>
