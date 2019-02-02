@@ -101,7 +101,7 @@
 }
 
 .shareholder-enter {
-  transition: 5s;
+  transition: 100ms;
   opacity: 0.3;
 }
 
@@ -110,7 +110,7 @@
 }
 
 .shareholder-exit {
-  transition: 5s;
+  transition: 100ms;
   opacity: 1;
 }
 

@@ -39,7 +39,7 @@ class Shareholder extends React.Component {
 
     return (
       <TransitionGroup className="shareholder">
-        <CSSTransition timeout={{enter:5000, exit:5000}} classNames="shareholder">
+        <CSSTransition timeout={{enter:100, exit:100}} classNames="shareholder">
           <div className="card">
             <input className="card--name" type="text" name="name" onChange={this.handleNameChange} value={name}/>
             <div className="card--email">
