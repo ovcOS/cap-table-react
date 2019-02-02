@@ -33,7 +33,7 @@ class IssueNewShares extends React.Component {
         </select>
         <input name="date" ref={this.dateRef} type="date" placeholder="Issue date" required />
         <input name="amount" type="number" ref={this.amountRef} placeholder="Amount of shares" min="1" required />
-        <input name="pricePerShare" type="number" ref={this.pricePerShareRef} placeholder="Price per share ($)" required />
+        <input name="pricePerShare" type="number" ref={this.pricePerShareRef} placeholder="Price per share ($)" min="0" required />
         <button className="button button-add hover-shadow" type="submit">ISSUE SHARES</button>
       </form>
     )

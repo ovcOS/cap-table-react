@@ -1,5 +1,6 @@
 import React from 'react';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import SharesIssue from './SharesIssue'
 
 class Shareholder extends React.Component {
   handleNameChange = (event) => {
@@ -28,7 +29,14 @@ class Shareholder extends React.Component {
   }
 
   render() {
-    const { name, email, address } = this.props.holderDetails;
+    const { _id, name, email, address } = this.props.holderDetails;
+    const allIssues = this.props.issueDetails;
+    const issues = Object.entries(allIssues).filter(issue => {
+      if (_id === issue[1].shareholderId) {
+        return issue
+      }
+    });
+
     return (
       <TransitionGroup className="shareholder">
         <CSSTransition timeout={{enter:100, exit:100}} classNames="shareholder">
@@ -302,6 +310,11 @@ class Shareholder extends React.Component {
                 </select>
               </span>
             </div>
+            <hr/>
+            {issues.map(issue => {
+              return  <SharesIssue key={issue[0]} index={issue[0]} issueDetails={issue[1]} updateIssue={this.props.updateIssue} />
+              }
+            )}
             <button className="button-delete" onClick={this.deleteShareholder}></button>
           </div>
         </CSSTransition>

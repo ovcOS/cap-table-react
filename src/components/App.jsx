@@ -53,6 +53,12 @@ class App extends React.Component {
     this.setState({ sharesIssues });
   };
 
+  updateIssue = (key, updatedIssue) => {
+    const sharesIssues = {...this.state.sharesIssues};
+    sharesIssues[key] = updatedIssue;
+    this.setState({ sharesIssues });
+  };
+
   loadSamples = () => {
     const shareholders = {...this.state.shareholders, ...samples.sampleInvestors};
     this.setState({ shareholders })
@@ -90,7 +96,8 @@ class App extends React.Component {
                     holderDetails={this.state.shareholders[shareholder]}
                     issueDetails={this.state.sharesIssues}
                     updateShareholder={this.updateShareholder}
-                    deleteShareholder={this.deleteShareholder}/>
+                    deleteShareholder={this.deleteShareholder}
+                    updateIssue={this.updateIssue}/>
           })}
         </div>
         <button className="button-reset hover-shadow" onClick={this.startFromScratch}></button>

@@ -75,7 +75,12 @@
   width: 300px;
   height: 45px;
   text-align-last:center;
+  margin-bottom: 20px;
 }
 
+
+.card hr {
+  border: 2px solid #0CADCF;
+}
 
 
