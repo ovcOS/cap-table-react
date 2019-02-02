@@ -5,6 +5,7 @@ import CapTable from './CapTable';
 import Header from './Header';
 import samples from '../samples'
 import Shareholder from './Shareholder'
+import Subheader from './Subheader'
 
 class App extends React.Component {
   state = {
@@ -80,7 +81,8 @@ class App extends React.Component {
             <CapTable holderDetails={this.state.shareholders} issueDetails={this.state.sharesIssues} />
           </div>
         </div>
-        <div>
+        <Subheader/>
+        <div className="shareholders">
           {Object.keys(this.state.shareholders).map(shareholder => {
             return <Shareholder
                     key={shareholder}

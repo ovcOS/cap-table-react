@@ -100,9 +100,40 @@ input[type="date"]:valid:before {
   display:flex;
 }
 
+.subheader {
+  padding: 2%;
+  margin: 30px;
+  border-top: 3px dotted #FCBE02;
+  position: relative;
+}
+
+.subheader h2 {
+  border-bottom: 2px solid #FCBE02;
+  display: inline-block;
+  padding-bottom: 15px;
+}
+
+.subheader-info {
+  position: absolute;
+  display: flex;
+  top: 4em;
+  left: 35%;
+  font-family: 'Handlee', cursive;
+  font-size: 18px;
+  transform: skewX(-10deg);
+}
+
+.subheader-info img {
+  height: 35px;
+  -webkit-transform: scaleX(-1) rotate(180deg);
+  transform: scaleX(-1) rotate(180deg);
+  padding: 1em;
+}
+
 /* Palette:
 ledgy-blue: #0CADCF
 daring-yellow: #FCBE02
 dark-gray: #273043
 snow-white: #FAFAFA
-danger-red: #FE3E23 */
+danger-red: #FE3E23
+darker-blue: #09A0BF */
