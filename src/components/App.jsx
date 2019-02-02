@@ -93,7 +93,7 @@ class App extends React.Component {
                     deleteShareholder={this.deleteShareholder}/>
           })}
         </div>
-        <button className="button-reset hover-shadow" onClick={this.startFromScratch}>RESET</button>
+        <button className="button-reset hover-shadow" onClick={this.startFromScratch}></button>
       </div>
     );
   }

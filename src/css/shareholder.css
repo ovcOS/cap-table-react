@@ -52,7 +52,7 @@
 
 .card--email input, .card--address input, .card--address select {
   text-align: center;
-  border: 1px solid #FCBE02;
+  background-color: #0CADCF;
 }
 
 .card--address {

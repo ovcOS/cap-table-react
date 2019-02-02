@@ -17,9 +17,10 @@ input, select, option {
   color: #FAFAFA;
   height: 40px;
   border-radius: 5px;
-  border: 1px solid #FAFAFA;
+  border: 1px solid transparent;
   padding-left: 10px;
   margin-bottom: 5px;
+  background-color: #09A0BF;
 }
 
 input:focus, select:focus, option:focus {
@@ -42,7 +43,7 @@ input[name="city"] {
 }
 
 input[type="date"] {
-  background: transparent url(../icons/calendar.png)  97% 50% no-repeat;
+  background: #09A0BF url(../icons/calendar.png)  97% 50% no-repeat;
   background-size: 25px;
 }
 input[type="date"]::-webkit-inner-spin-button {

@@ -302,8 +302,7 @@ class Shareholder extends React.Component {
                 </select>
               </span>
             </div>
-            <br/>
-            <button className="button-delete hover-shadow" onClick={this.deleteShareholder}>DELETE SHAREHOLDER</button>
+            <button className="button-delete" onClick={this.deleteShareholder}></button>
           </div>
         </CSSTransition>
       </TransitionGroup>

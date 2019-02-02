@@ -88,14 +88,38 @@
 }
 
 .button-delete {
-  background-color:#DD403A;
-  color: #FAFAFA;
+  background-color: #FCBE02;
+  color: #273043;
   padding: 0.5em;
-  border: 1px solid #273043;
   font-size: 14px;
-  border-radius: 5px;
+  border-radius: 0 0 0 5px;
+  border: 1px solid transparent;
   cursor: pointer;
   transition: 0.5s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+}
+
+.button-delete:hover {
+  background-color: #DD403A;
+  color: #FAFAFA;
+  border: 1px solid #273043;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.button-delete::after {
+  content: "DELETE";
+}
+
+.button-reset::after {
+  content: "RESET";
+}
+
+.button-delete:hover::after, .button-reset:hover::after {
+  content: "SURE?";
 }
 
 .button-reset {
@@ -111,6 +135,12 @@
   border-radius: 5px;
   cursor: pointer;
   transition: 0.5s;
+}
+
+.button-reset:hover {
+  font-weight: 500;
+  transition: 0.5s;
+  padding: 1em;
 }
 
 .button-add:focus, .button-populate:focus, .button-delete:focus, .button-reset:focus {
