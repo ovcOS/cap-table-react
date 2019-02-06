@@ -10,7 +10,7 @@ class IssueNewShares extends React.Component {
     event.preventDefault();
     const sharesIssue = {
       shareholderId: this.idRef.current.value,
-      date: new Date(this.dateRef.current.value),
+      date: JSON.stringify(new Date(this.dateRef.current.value)),
       amount: parseInt(this.amountRef.current.value),
       pricePerShare: parseInt(this.pricePerShareRef.current.value), 
     };

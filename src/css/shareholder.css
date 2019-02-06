@@ -93,11 +93,12 @@
 }
 
 .issue-details input {
-  margin-right: 2em;
+  margin-right: 3em;
 }
 
 .issue-details input[name="date"] {
-  width: 300px;
+  width: 200px;
+  margin-right: 0;
 }
 
 .shareholder-enter {

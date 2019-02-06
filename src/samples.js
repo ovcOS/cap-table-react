@@ -65,31 +65,31 @@ const samples = {
   sampleIssues: {
     issue1: {
       shareholderId: 'id1',
-      date: new Date(),
+      date: JSON.stringify(new Date()),
       amount: 600000,
       pricePerShare: 150, 
     },
     issue2: {
       shareholderId: 'id2',
-      date: new Date(),
+      date: JSON.stringify(new Date()),
       amount: 125000,
       pricePerShare: 210, 
     },
     issue3: {
       shareholderId: 'id3',
-      date: new Date(),
+      date: JSON.stringify(new Date()),
       amount: 900000,
       pricePerShare: 120, 
     },
     issue4: {
       shareholderId: 'id4',
-      date: new Date(),
+      date: JSON.stringify(new Date()),
       amount: 103500,
       pricePerShare: 90, 
     },
     issue5: {
       shareholderId: 'id5',
-      date: new Date(),
+      date: JSON.stringify(new Date()),
       amount: 60000,
       pricePerShare: 100, 
     },

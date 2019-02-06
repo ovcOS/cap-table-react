@@ -13,6 +13,7 @@ class SharesIssue extends React.Component {
     this.props.deleteIssue(this.props.index)
   }
 
+  
   render() {
     return(
       <div className="shares-issue">
@@ -31,7 +32,10 @@ class SharesIssue extends React.Component {
                  value={this.props.issueDetails.pricePerShare}
                  placeholder="Price per share ($)"/>
           <span className="alter-font">issue date (read-only):</span>
-          <input name="date" type="text" value={this.props.issueDetails.date} readOnly />
+          <input name="date"
+                 type="text"
+                 value={JSON.parse(this.props.issueDetails.date).split("T")[0]}
+                 readOnly />
         </div>
         <button className="button-delete-issue" onClick={this.deleteIssue}></button>
       </div>
