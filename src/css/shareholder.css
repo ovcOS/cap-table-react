@@ -12,6 +12,8 @@
   border: 2px solid #FCBE02;
   border-radius: 5px;
   background: #09A0BF;
+  transition: 1s;
+  /* max-height: 10000px; */
 }
 
 .card--name {
@@ -97,24 +99,28 @@
 }
 
 .issue-details input[name="date"] {
-  width: 200px;
+  width: 180px;
   margin-right: 0;
 }
 
-.shareholder-enter {
-  transition: 100ms;
+.shareholder-enter, .issue-transition-enter {
+  transition: 1s;
   opacity: 0.3;
+  transform: translateY(-100%);
 }
 
-.shareholder-enter-active {
+.shareholder-enter-active, .issue-transition-enter-active {
   opacity: 1;
+  transform: translateY(0);
 }
 
-.shareholder-exit {
-  transition: 100ms;
+.shareholder-exit, .issue-transition-exit {
+  transition: 1s;
   opacity: 1;
+  transform: translateX(0);
 }
 
-.shareholder-exit-active {
+.shareholder-exit-active, .issue-transition-exit-active {
   opacity: 0;
+  transform: translateX(200%);
 }

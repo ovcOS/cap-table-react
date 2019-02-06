@@ -6,6 +6,7 @@ import Header from './Header';
 import samples from '../samples'
 import Shareholder from './Shareholder'
 import Subheader from './Subheader'
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 class App extends React.Component {
   state = {
@@ -94,19 +95,23 @@ class App extends React.Component {
           </div>
         </div>
         <Subheader/>
-        <div className="shareholders">
+        <TransitionGroup className="shareholders">
           {Object.keys(this.state.shareholders).map(shareholder => {
-            return <Shareholder
+            return <CSSTransition
+                    timeout={{enter:1000, exit:1000}}
                     key={shareholder}
-                    index={shareholder}
-                    holderDetails={this.state.shareholders[shareholder]}
-                    issueDetails={this.state.sharesIssues}
-                    updateShareholder={this.updateShareholder}
-                    deleteShareholder={this.deleteShareholder}
-                    updateIssue={this.updateIssue}
-                    deleteIssue={this.deleteIssue}/>
+                    classNames="shareholder">
+                      <Shareholder
+                        index={shareholder}
+                        holderDetails={this.state.shareholders[shareholder]}
+                        issueDetails={this.state.sharesIssues}
+                        updateShareholder={this.updateShareholder}
+                        deleteShareholder={this.deleteShareholder}
+                        updateIssue={this.updateIssue}
+                        deleteIssue={this.deleteIssue}/>
+                  </CSSTransition>
           })}
-        </div>
+        </TransitionGroup>
         <button className="button-reset hover-shadow" onClick={this.startFromScratch}></button>
       </div>
     );
