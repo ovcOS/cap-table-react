@@ -321,7 +321,6 @@ class Shareholder extends React.Component {
                       updateIssue={this.props.updateIssue}
                       deleteIssue={this.props.deleteIssue} />
                     </CSSTransition>
-
             }
           )}
         </TransitionGroup>

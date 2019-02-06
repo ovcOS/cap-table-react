@@ -12,8 +12,6 @@
   border: 2px solid #FCBE02;
   border-radius: 5px;
   background: #09A0BF;
-  transition: 1s;
-  /* max-height: 10000px; */
 }
 
 .card--name {
@@ -85,13 +83,14 @@
 }
 
 .shares-issue {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   padding-top: 1em;
   position: relative;
 }
 
 .issue-title {
-  border-bottom: 2px dashed #FCBE02;
+  border-bottom: 2px dotted #FCBE02;
 }
 
 .issue-details input {
@@ -107,20 +106,47 @@
   transition: 1s;
   opacity: 0.3;
   transform: translateY(-100%);
+  max-height: 0;
 }
 
-.shareholder-enter-active, .issue-transition-enter-active {
+.shareholder-enter-active {
   opacity: 1;
   transform: translateY(0);
+  max-height: 420px;
 }
 
-.shareholder-exit, .issue-transition-exit {
+.issue-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 110px;
+}
+
+.shareholder-exit {
+  transition: 1s;
+  opacity: 1;
+  transform: translateX(0);
+  max-height: 1000px;
+}
+
+.shareholder-exit-active {
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-height: 0;
+  transform: translateX(100%);
+}
+
+.issue-transition-exit {
   transition: 1s;
   opacity: 1;
   transform: translateX(0);
 }
 
-.shareholder-exit-active, .issue-transition-exit-active {
+.issue-transition-exit-active {
   opacity: 0;
-  transform: translateX(200%);
+  transform: translateX(100%);
+  margin: -55.5px 0;
+  padding: 0;
 }
